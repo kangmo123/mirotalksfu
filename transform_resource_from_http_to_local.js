@@ -23,7 +23,8 @@ files.forEach(file => {
     const scriptTags = $(`${tagName}[${attributeName}]`);
     scriptTags.each((index, element) => {
       const attributeValue = $(element).attr(attributeName);
-      if (attributeValue.startsWith('https://')) {
+      if (attributeValue.startsWith('https://'
+        && !attributeValue.includes('cdnjs.cloudflare.com'))) {
         const localPath = path.join(__dirname, `${resultPath}/${folder}`, attributeValue.substring(8));
         const localDir = path.dirname(localPath);
     
