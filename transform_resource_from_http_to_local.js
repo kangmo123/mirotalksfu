@@ -25,14 +25,13 @@ files.forEach(file => {
       const attributeValue = $(element).attr(attributeName);
       if (attributeValue.startsWith('https://')) {
         const localPath = path.join(__dirname, `${resultPath}/${folder}`, attributeValue.substring(8));
-        const publicPath = path.join(__dirname, `${resultPath}`, `${public}`, `${folder}`, attributeValue.substring(8));
         const localDir = path.dirname(localPath);
     
         if (!fs.existsSync(localDir)) {
           fs.mkdirSync(localDir, { recursive: true });
         }
     
-        $(element).attr(attributeName, '.' + path.relative('.', publicPath).substring(resultPath.length));
+        $(element).attr(attributeName, path.join('//', public, path.relative('.', localPath).substring(resultPath.length)));
         request(attributeValue).pipe(fs.createWriteStream(localPath))
       }
     });
