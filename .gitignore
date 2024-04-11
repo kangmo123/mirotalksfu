@@ -15,7 +15,6 @@ package-lock.json
 .cache
 
 # personal
-config.js
 docker-compose.yml
 docker-push.sh
 rec
