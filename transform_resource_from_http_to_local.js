@@ -3,8 +3,8 @@ const path = require('path');
 const request = require('request');
 const cheerio = require('cheerio');
 
-const sourcePath = 'public/views'
-const resultPath = 'convert/views'
+const sourcePath = 'public/views-bak'
+const resultPath = 'public/views'
 
 fs.rmSync(resultPath, {
   recursive: true,
