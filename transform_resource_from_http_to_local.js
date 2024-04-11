@@ -37,10 +37,10 @@ files.forEach(file => {
     });
   }
 
-  replaceHttp('script', 'src', 'js')
-  replaceHttp('link', 'href', 'css')
-  replaceHttp('meta', 'content', 'meta')
-  replaceHttp('img', 'src', 'img')
+  replaceHttp('script', 'src', 'views/js')
+  replaceHttp('link', 'href', 'views/css')
+  replaceHttp('meta', 'content', 'views/meta')
+  replaceHttp('img', 'src', 'views/img')
 
   fs.writeFileSync(path.join(resultPath, file), $.html());
 })
