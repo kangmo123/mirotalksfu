@@ -1,101 +1,122 @@
-<!DOCTYPE html><html lang="en"><head>
+<!doctype html>
+<html lang="en">
+    <head>
         <!-- Title and Icon -->
 
         <title>MiroTalk SFU - Room Video Calls, Messaging and Screen Sharing.</title>
-        <link rel="shortcut icon" href="../images/logo.svg">
-        <link rel="apple-touch-icon" href="../images/logo.svg">
+        <link rel="shortcut icon" href="../images/logo.svg" />
+        <link rel="apple-touch-icon" href="../images/logo.svg" />
 
         <!-- Meta Information -->
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="MiroTalk SFU powered by WebRTC and mediasoup, Real-time Simple Secure Fast video calls, messaging and screen sharing capabilities in the browser.">
-        <meta name="keywords" content="webrtc, chatGPT, miro, mediasoup, mediasoup-client, self hosted, voip, sip, real-time communications, chat, messaging, meet, webrtc stun, webrtc turn, webrtc p2p, webrtc sfu, video meeting, video chat, video conference, multi video chat, multi video conference, peer to peer, p2p, sfu, rtc, alternative to, zoom, microsoft teams, google meet, jitsi, meeting">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="MiroTalk SFU powered by WebRTC and mediasoup, Real-time Simple Secure Fast video calls, messaging and screen sharing capabilities in the browser."
+        />
+        <meta
+            name="keywords"
+            content="webrtc, chatGPT, miro, mediasoup, mediasoup-client, self hosted, voip, sip, real-time communications, chat, messaging, meet, webrtc stun, webrtc turn, webrtc p2p, webrtc sfu, video meeting, video chat, video conference, multi video chat, multi video conference, peer to peer, p2p, sfu, rtc, alternative to, zoom, microsoft teams, google meet, jitsi, meeting"
+        />
 
         <!-- https://ogp.me -->
 
-        <meta property="og:type" content="app-webrtc">
-        <meta property="og:site_name" content="MiroTalk SFU">
-        <meta property="og:title" content="Click the link to make a call.">
-        <meta property="og:description" content="MiroTalk SFU calling provides real-time video calls, messaging and screen sharing.">
-        <meta property="og:image" content="https://sfu.mirotalk.com/images/mirotalksfu.png">
+        <meta property="og:type" content="app-webrtc" />
+        <meta property="og:site_name" content="MiroTalk SFU" />
+        <meta property="og:title" content="Click the link to make a call." />
+        <meta
+            property="og:description"
+            content="MiroTalk SFU calling provides real-time video calls, messaging and screen sharing."
+        />
+        <meta property="og:image" content="https://sfu.mirotalk.com/images/mirotalksfu.png" />
 
         <!-- StyleSheet -->
 
-        <link rel="stylesheet" href="../css/Room.css">
-        <link rel="stylesheet" href="../css/VideoGrid.css">
-        <link rel="stylesheet" href="../css/GroupChat.css">
+        <link rel="stylesheet" href="../css/Room.css" />
+        <link rel="stylesheet" href="../css/VideoGrid.css" />
+        <link rel="stylesheet" href="../css/GroupChat.css" />
 
         <!-- https://cdnjs.com/libraries/font-awesome -->
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
         <!-- https://animate.style 4 using for swal fadeIn-Out -->
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
         <!-- Bootstrap 5  https://getbootstrap.com/docs/5.0/components/-->
 
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
         <!-- flatpickr  https://flatpickr.js.org/themes/ -->
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-        <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+        <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css" />
 
         <!--  pickr  https://github.com/simonwep/pickr -->
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" />
 
         <!-- Modern or es5 bundle -->
-        <script defer="" src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
 
         <!-- Bootstrap 5 -->
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
 
         <!-- axios -->
 
-        <script async="" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script async src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-        <script async="" src="../js/Umami.js"></script>
+        <script async src="../js/Umami.js"></script>
 
         <!-- Js scripts https://cdn.jsdelivr.net -->
 
-        <script defer="" src="/socket.io/socket.io.js"></script>
-        <script defer="" src="../sfu/MediasoupClient.js"></script>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/xss/dist/xss.min.js"></script>
-        <script defer="" src="../js/LocalStorage.js"></script>
-        <script defer="" src="../js/Rules.js"></script>
-        <script defer="" src="../js/Helpers.js"></script>
-        <script defer="" src="../js/SpeechRec.js"></script>
-        <script defer="" src="../js/Transcription.js"></script>
-        <script defer="" src="../js/VideoGrid.js"></script>
-        <script defer="" src="../js/RoomClient.js"></script>
-        <script defer="" src="../js/Room.js"></script>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/detectrtc@1.4.1/DetectRTC.min.js"></script>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/fabric@5.3.0-browser/dist/fabric.min.js"></script>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8"></script>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
-        <script defer="" src="https://unpkg.com/@popperjs/core@2"></script>
-        <script defer="" src="https://unpkg.com/tippy.js@6"></script>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
-        <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+        <script defer src="/socket.io/socket.io.js"></script>
+        <script defer src="../sfu/MediasoupClient.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/xss/dist/xss.min.js"></script>
+        <script defer src="../js/LocalStorage.js"></script>
+        <script defer src="../js/Rules.js"></script>
+        <script defer src="../js/Helpers.js"></script>
+        <script defer src="../js/SpeechRec.js"></script>
+        <script defer src="../js/Transcription.js"></script>
+        <script defer src="../js/VideoGrid.js"></script>
+        <script defer src="../js/RoomClient.js"></script>
+        <script defer src="../js/Room.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/detectrtc@1.4.1/DetectRTC.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/fabric@5.3.0-browser/dist/fabric.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+        <script defer src="https://unpkg.com/@popperjs/core@2"></script>
+        <script defer src="https://unpkg.com/tippy.js@6"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
     </head>
     <body onload="initClient()">
         <noscript>You need to enable JavaScript to run this app.</noscript>
 
         <div id="loadingDiv" class="center pulsate">
             <h1>Loading</h1>
-            <img src="../images/loading.gif" style="width: 400px">
-            <pre>Please allow the camera or microphone
+            <img src="../images/loading.gif" style="width: 400px" />
+            <pre>
+Please allow the camera or microphone
 access to use this app.
             </pre>
         </div>
@@ -104,14 +125,29 @@ access to use this app.
             <div id="initUser" class="init-user hidden">
                 <!-- <p>Please allow the camera & microphone access to use this app.</p> -->
                 <div id="initVideoContainer" class="init-video-container">
-                    <video id="initVideo" playsinline="true" autoplay="" class="mirror" poster="../images/loader.gif" style="object-fit: contain"></video>
+                    <video
+                        id="initVideo"
+                        playsinline="true"
+                        autoplay=""
+                        class="mirror"
+                        poster="../images/loader.gif"
+                        style="object-fit: contain"
+                    ></video>
                 </div>
                 <div class="initComands">
                     <button id="initVideoButton" class="fas fa-video" onclick="handleVideo(event)"></button>
                     <button id="initAudioButton" class="fas fa-microphone" onclick="handleAudio(event)"></button>
                     <button id="initAudioVideoButton" class="fas fa-eye" onclick="handleAudioVideo(event)"></button>
-                    <button id="initStartScreenButton" class="fas fa-desktop hidden" onclick="toggleScreenSharing()"></button>
-                    <button id="initStopScreenButton" class="fas fa-stop-circle hidden" onclick="toggleScreenSharing()"></button>
+                    <button
+                        id="initStartScreenButton"
+                        class="fas fa-desktop hidden"
+                        onclick="toggleScreenSharing()"
+                    ></button>
+                    <button
+                        id="initStopScreenButton"
+                        class="fas fa-stop-circle hidden"
+                        onclick="toggleScreenSharing()"
+                    ></button>
                     <select id="initVideoSelect" class="form-select text-light bg-dark"></select>
                     <select id="initMicrophoneSelect" class="form-select text-light bg-dark"></select>
                     <select id="initSpeakerSelect" class="form-select text-light bg-dark"></select>
@@ -193,12 +229,12 @@ access to use this app.
                             <i class="fas fa-expand-alt"></i>
                             <p>Full screen mode</p>
                         </button>
-                        <br>
+                        <br />
                         <button id="fileShareButton" class="hidden">
                             <i class="fas fa-folder-open"></i>
                             <p>File sharing</p>
                         </button>
-                        <br>
+                        <br />
                         <button id="lockRoomButton" class="hidden">
                             <i class="fas fa-lock-open"></i>
                             <p>Lock room</p>
@@ -207,9 +243,9 @@ access to use this app.
                             <i class="fas fa-lock"></i>
                             <p>Unlock room</p>
                         </button>
-                        <hr style="border: 1px solid grey">
+                        <hr style="border: 1px solid grey" />
                         <table class="settingsTable">
-                            <tbody><tr id="broadcastingButton" class="hidden">
+                            <tr id="broadcastingButton" class="hidden">
                                 <td class="custom-width">
                                     <div class="title">
                                         <i class="fa-solid fa-wifi"></i>
@@ -218,7 +254,7 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md title">
-                                        <input id="switchBroadcasting" class="form-check-input" type="checkbox">
+                                        <input id="switchBroadcasting" class="form-check-input" type="checkbox" />
                                     </div>
                                 </td>
                             </tr>
@@ -231,7 +267,7 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md title">
-                                        <input id="switchLobby" class="form-check-input" type="checkbox">
+                                        <input id="switchLobby" class="form-check-input" type="checkbox" />
                                     </div>
                                 </td>
                             </tr>
@@ -244,7 +280,7 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md">
-                                        <input id="switchPitchBar" class="form-check-input" type="checkbox" checked="">
+                                        <input id="switchPitchBar" class="form-check-input" type="checkbox" checked />
                                     </div>
                                 </td>
                             </tr>
@@ -257,7 +293,7 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md">
-                                        <input id="switchSounds" class="form-check-input" type="checkbox" checked="">
+                                        <input id="switchSounds" class="form-check-input" type="checkbox" checked />
                                     </div>
                                 </td>
                             </tr>
@@ -270,14 +306,14 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md">
-                                        <input id="switchShare" class="form-check-input" type="checkbox" checked="">
+                                        <input id="switchShare" class="form-check-input" type="checkbox" checked />
                                     </div>
                                 </td>
                             </tr>
-                        </tbody></table>
-                        <hr style="border: 1px solid grey">
+                        </table>
+                        <hr style="border: 1px solid grey" />
                         <table class="settingsTable">
-                            <tbody><tr>
+                            <tr>
                                 <td>
                                     <div class="title">
                                         <i class="fa-solid fa-person-shelter"></i>
@@ -301,17 +337,17 @@ access to use this app.
                                     </div>
                                 </td>
                             </tr>
-                        </tbody></table>
+                        </table>
                     </div>
 
                     <div id="tabVideoDevices" class="tabcontent">
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fas fa-video"></i>
                             <p>Video Source:</p>
                         </div>
                         <select id="videoSelect" class="form-select text-light bg-dark"></select>
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fas fa-palette"></i>
                             <p>Video Quality:</p>
@@ -325,25 +361,25 @@ access to use this app.
                             <option value="2k">🎥&nbsp;2k</option>
                             <option value="4k">🎥&nbsp;4K</option>
                         </select>
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fa-solid fa-camera"></i>
                             <p>Camera FPS:</p>
                         </div>
-                        <br>
+                        <br />
                         <select id="videoFps" class="form-select text-light bg-dark">
                             <option value="max">max frame-per-second</option>
                             <option value="30">30 - frame-per-second</option>
                             <option value="15">15 - frame-per-second</option>
                             <option value="5">5 - frame-per-second</option>
                         </select>
-                        <br>
+                        <br />
                         <div id="ScreenFpsDiv" class="hidden">
                             <div class="title">
                                 <i class="fa-solid fa-desktop"></i>
                                 <p>Screen FPS:</p>
                             </div>
-                            <br>
+                            <br />
                             <select id="screenFps" class="form-select text-light bg-dark">
                                 <option value="max">max frame-per-second</option>
                                 <option value="30">30 - frame-per-second</option>
@@ -354,13 +390,13 @@ access to use this app.
                     </div>
 
                     <div id="tabAudioDevices" class="tabcontent">
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fas fa-microphone"></i>
                             <p>Microphone:</p>
                         </div>
                         <select id="microphoneSelect" class="form-select text-light bg-dark"></select>
-                        <br>
+                        <br />
                         <div class="volume-container">
                             <div class="volume-bar"></div>
                             <div class="volume-bar"></div>
@@ -373,16 +409,22 @@ access to use this app.
                             <div class="volume-bar"></div>
                             <div class="volume-bar"></div>
                         </div>
-                        <br>
+                        <br />
                         <div class="dropdown">
-                            <button class="dropdown-toggle" type="button" id="micOptionsButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button
+                                class="dropdown-toggle"
+                                type="button"
+                                id="micOptionsButton"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
                                 <i class="fas fa-screwdriver-wrench"></i>
                                 <p>Advance options</p>
                             </button>
                             <div class="dropdown-menu text-start" aria-labelledby="micOptionsButton">
                                 <!-- onclick="event.stopPropagation()" -->
                                 <table class="settingsTable">
-                                    <tbody><tr id="autoGainControlButton">
+                                    <tr id="autoGainControlButton">
                                         <td class="microphone-table-width">
                                             <div class="title">
                                                 <!-- <i class="fas fa-ear-listen"></i> -->
@@ -391,7 +433,11 @@ access to use this app.
                                         </td>
                                         <td>
                                             <div class="form-check form-switch form-switch-md">
-                                                <input id="switchAutoGainControl" class="form-check-input" type="checkbox">
+                                                <input
+                                                    id="switchAutoGainControl"
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                />
                                             </div>
                                         </td>
                                     </tr>
@@ -404,7 +450,12 @@ access to use this app.
                                         </td>
                                         <td>
                                             <div class="form-check form-switch form-switch-md">
-                                                <input id="switchEchoCancellation" class="form-check-input" type="checkbox" checked="">
+                                                <input
+                                                    id="switchEchoCancellation"
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    checked
+                                                />
                                             </div>
                                         </td>
                                     </tr>
@@ -417,7 +468,12 @@ access to use this app.
                                         </td>
                                         <td>
                                             <div class="form-check form-switch form-switch-md">
-                                                <input id="switchNoiseSuppression" class="form-check-input" type="checkbox" checked="">
+                                                <input
+                                                    id="switchNoiseSuppression"
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    checked
+                                                />
                                             </div>
                                         </td>
                                     </tr>
@@ -429,7 +485,10 @@ access to use this app.
                                             </div>
                                         </td>
                                         <td>
-                                            <select id="sampleRateSelect" class="form-select form-select-sm text-light bg-dark">
+                                            <select
+                                                id="sampleRateSelect"
+                                                class="form-select form-select-sm text-light bg-dark"
+                                            >
                                                 <option value="48000">48000 Hz</option>
                                                 <option value="44100">44100 Hz</option>
                                             </select>
@@ -443,7 +502,10 @@ access to use this app.
                                             </div>
                                         </td>
                                         <td>
-                                            <select id="sampleSizeSelect" class="form-select form-select-sm text-light bg-dark">
+                                            <select
+                                                id="sampleSizeSelect"
+                                                class="form-select form-select-sm text-light bg-dark"
+                                            >
                                                 <option value="16">16 bits</option>
                                                 <option value="32">32 bits</option>
                                             </select>
@@ -457,7 +519,10 @@ access to use this app.
                                             </div>
                                         </td>
                                         <td>
-                                            <select id="channelCountSelect" class="form-select form-select-sm text-light bg-dark">
+                                            <select
+                                                id="channelCountSelect"
+                                                class="form-select form-select-sm text-light bg-dark"
+                                            >
                                                 <option value="1">1 (mono)</option>
                                                 <option value="2">2 (stereo)</option>
                                             </select>
@@ -472,7 +537,16 @@ access to use this app.
                                         </td>
                                         <td>
                                             <div class="title">
-                                                <input type="range" class="form-range" id="micLatencyRange" name="latency" min="10" max="1000" value="50" step="10">
+                                                <input
+                                                    type="range"
+                                                    class="form-range"
+                                                    id="micLatencyRange"
+                                                    name="latency"
+                                                    min="10"
+                                                    max="1000"
+                                                    value="50"
+                                                    step="10"
+                                                />
                                                 <p><span id="micLatencyValue">50</span>&nbsp;ms</p>
                                             </div>
                                         </td>
@@ -486,7 +560,16 @@ access to use this app.
                                         </td>
                                         <td>
                                             <div>
-                                                <input type="range" class="form-range" id="micVolumeRange" name="volume" min="0" max="100" value="100" step="10">
+                                                <input
+                                                    type="range"
+                                                    class="form-range"
+                                                    id="micVolumeRange"
+                                                    name="volume"
+                                                    min="0"
+                                                    max="100"
+                                                    value="100"
+                                                    step="10"
+                                                />
                                                 <p><span id="micVolumeValue">100</span>&nbsp;%</p>
                                             </div>
                                         </td>
@@ -498,27 +581,27 @@ access to use this app.
                                             </button>
                                         </td>
                                     </tr>
-                                </tbody></table>
+                                </table>
                             </div>
                         </div>
                         <div id="speakerSelectDiv">
-                            <hr style="border: 1px solid grey">
+                            <hr style="border: 1px solid grey" />
                             <div class="title">
                                 <i class="fas fa-headphones"></i>
                                 <p>Speaker:</p>
                             </div>
                             <select id="speakerSelect" class="form-select text-light bg-dark"></select>
-                            <hr style="border: 1px solid grey">
+                            <hr style="border: 1px solid grey" />
                             <button id="speakerTestBtn">
                                 <i class="fa-solid fa-circle-play"></i>
                                 <p>Test speaker</p>
                             </button>
-                            <br>
+                            <br />
                         </div>
                         <div id="pushToTalkDiv" class="hidden">
-                            <hr style="border: 1px solid grey">
+                            <hr style="border: 1px solid grey" />
                             <table class="settingsTable">
-                                <tbody><tr>
+                                <tr>
                                     <td class="width-150">
                                         <div class="title">
                                             <i class="fa-solid fa-hand-pointer"></i>
@@ -527,18 +610,18 @@ access to use this app.
                                     </td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md title">
-                                            <input id="switchPushToTalk" class="form-check-input" type="checkbox">
+                                            <input id="switchPushToTalk" class="form-check-input" type="checkbox" />
                                         </div>
                                     </td>
                                 </tr>
-                            </tbody></table>
+                            </table>
                         </div>
-                        <br>
+                        <br />
                     </div>
 
                     <div id="tabModerator" class="tabcontent">
                         <table class="settingsTable">
-                            <tbody><tr id="everyoneMuteBtn">
+                            <tr id="everyoneMuteBtn">
                                 <td style="width: auto">
                                     <div class="title">
                                         <i class="fas fa-microphone-slash"></i>
@@ -547,7 +630,7 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md title">
-                                        <input id="switchEveryoneMute" class="form-check-input" type="checkbox">
+                                        <input id="switchEveryoneMute" class="form-check-input" type="checkbox" />
                                     </div>
                                 </td>
                             </tr>
@@ -560,13 +643,18 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md">
-                                        <input id="switchEveryoneHidden" class="form-check-input" type="checkbox" checked="">
+                                        <input
+                                            id="switchEveryoneHidden"
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            checked
+                                        />
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <hr style="border: 1px solid grey">
+                                    <hr style="border: 1px solid grey" />
                                 </td>
                             </tr>
                             <tr id="everyoneCantUnmuteBtn">
@@ -578,7 +666,12 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md">
-                                        <input id="switchEveryoneCantUnmute" class="form-check-input" type="checkbox" checked="">
+                                        <input
+                                            id="switchEveryoneCantUnmute"
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            checked
+                                        />
                                     </div>
                                 </td>
                             </tr>
@@ -591,7 +684,12 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md">
-                                        <input id="switchEveryoneCantUnhide" class="form-check-input" type="checkbox" checked="">
+                                        <input
+                                            id="switchEveryoneCantUnhide"
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            checked
+                                        />
                                     </div>
                                 </td>
                             </tr>
@@ -604,7 +702,12 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md">
-                                        <input id="switchEveryoneCantShareScreen" class="form-check-input" type="checkbox" checked="">
+                                        <input
+                                            id="switchEveryoneCantShareScreen"
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            checked
+                                        />
                                     </div>
                                 </td>
                             </tr>
@@ -617,7 +720,12 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md">
-                                        <input id="switchEveryoneCantChatPrivately" class="form-check-input" type="checkbox" checked="">
+                                        <input
+                                            id="switchEveryoneCantChatPrivately"
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            checked
+                                        />
                                     </div>
                                 </td>
                             </tr>
@@ -630,7 +738,12 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md">
-                                        <input id="switchEveryoneCantChatChatGPT" class="form-check-input" type="checkbox" checked="">
+                                        <input
+                                            id="switchEveryoneCantChatChatGPT"
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            checked
+                                        />
                                     </div>
                                 </td>
                             </tr>
@@ -643,19 +756,23 @@ access to use this app.
                                 </td>
                                 <td>
                                     <div class="form-check form-switch form-switch-md">
-                                        <input id="switchDisconnectAllOnLeave" class="form-check-input" type="checkbox">
+                                        <input
+                                            id="switchDisconnectAllOnLeave"
+                                            class="form-check-input"
+                                            type="checkbox"
+                                        />
                                     </div>
                                 </td>
                             </tr>
-                        </tbody></table>
+                        </table>
                     </div>
 
                     <div id="tabRecording" class="tabcontent">
-                        <img id="recordingImage" class="hidden" src="../images/recording.png">
+                        <img id="recordingImage" class="hidden" src="../images/recording.png" />
                         <div id="roomRecordingOptions" class="hidden">
-                            <hr style="border: 1px solid grey">
+                            <hr style="border: 1px solid grey" />
                             <table class="settingsTable">
-                                <tbody><tr>
+                                <tr>
                                     <td class="width-180">
                                         <div class="title">
                                             <i class="fa-solid fa-film"></i>
@@ -664,16 +781,16 @@ access to use this app.
                                     </td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md title">
-                                            <input id="switchH264Recording" class="form-check-input" type="checkbox">
+                                            <input id="switchH264Recording" class="form-check-input" type="checkbox" />
                                         </div>
                                     </td>
                                 </tr>
-                            </tbody></table>
+                            </table>
                         </div>
                         <div id="roomHostOnlyRecording" class="hidden">
-                            <hr style="border: 1px solid grey">
+                            <hr style="border: 1px solid grey" />
                             <table class="settingsTable">
-                                <tbody><tr>
+                                <tr>
                                     <td class="width-180">
                                         <div class="title">
                                             <i class="fa-solid fa-user-shield"></i>
@@ -682,15 +799,19 @@ access to use this app.
                                     </td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md title">
-                                            <input id="switchHostOnlyRecording" class="form-check-input" type="checkbox">
+                                            <input
+                                                id="switchHostOnlyRecording"
+                                                class="form-check-input"
+                                                type="checkbox"
+                                            />
                                         </div>
                                     </td>
                                 </tr>
-                            </tbody></table>
+                            </table>
                         </div>
                         <div id="roomRecordingServer" class="hidden">
                             <table class="settingsTable">
-                                <tbody><tr>
+                                <tr>
                                     <td class="width-180">
                                         <div class="title">
                                             <i class="fas fa-cloud-arrow-up"></i>
@@ -699,12 +820,16 @@ access to use this app.
                                     </td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md title">
-                                            <input id="switchServerRecording" class="form-check-input" type="checkbox">
+                                            <input
+                                                id="switchServerRecording"
+                                                class="form-check-input"
+                                                type="checkbox"
+                                            />
                                         </div>
                                     </td>
                                 </tr>
-                            </tbody></table>
-                            <hr style="border: 1px solid grey">
+                            </table>
+                            <hr style="border: 1px solid grey" />
                         </div>
                         <button id="pauseRecButton" class="hidden">
                             <i class="far fa-pause-circle"></i>
@@ -715,9 +840,9 @@ access to use this app.
                             <p>Resume recording</p>
                         </button>
                         <div id="recordingTime" class="hidden">
-                            <hr style="border: 1px solid grey">
+                            <hr style="border: 1px solid grey" />
                             <table class="settingsTable">
-                                <tbody><tr>
+                                <tr>
                                     <td class="custom-width">
                                         <div class="title">
                                             <i style="color: red" class="fa-solid fa-circle pulsate"></i>
@@ -726,7 +851,7 @@ access to use this app.
                                     </td>
                                     <td id="recordingStatus">0s</td>
                                 </tr>
-                            </tbody></table>
+                            </table>
                         </div>
                         <div id="recordingMessage" class="hidden">
                             <div class="title">
@@ -734,7 +859,7 @@ access to use this app.
                                 <p>The presenter has disabled meeting recording.</p>
                             </div>
                         </div>
-                        <br>
+                        <br />
                         <div id="lastRecordingInfo" class="hidden"></div>
                     </div>
 
@@ -743,20 +868,20 @@ access to use this app.
                             <i class="fab fa-youtube"></i>
                             <p>Share a Video or Audio</p>
                         </button>
-                        <br>
+                        <br />
                         <button id="videoCloseBtn" class="hidden">
                             <i class="fas fa-times"></i>
                             <p>Close Video or Audio</p>
                         </button>
-                        <br>
+                        <br />
                     </div>
 
                     <div id="tabProfile" class="tabcontent">
                         <div>
-                            <img id="myProfileAvatar">
+                            <img id="myProfileAvatar" />
                         </div>
                         <table class="settingsTable">
-                            <tbody><tr>
+                            <tr>
                                 <td>
                                     <div class="title">
                                         <i class="fa-solid fa-user"></i>
@@ -774,16 +899,16 @@ access to use this app.
                                     </div>
                                 </td>
                             </tr>
-                        </tbody></table>
+                        </table>
                     </div>
 
                     <div id="tabAspect" class="tabcontent">
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fa-solid fa-tv"></i>
                             <p>Aspect ratio:</p>
                         </div>
-                        <br>
+                        <br />
                         <select id="BtnAspectRatio" class="form-select text-light bg-dark">
                             <option value="0">default</option>
                             <option value="1">4:3</option>
@@ -791,12 +916,12 @@ access to use this app.
                             <option value="3">1:1</option>
                             <option value="4">1:2</option>
                         </select>
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fa-solid fa-film"></i>
                             <p>Video Object fit:</p>
                         </div>
-                        <br>
+                        <br />
                         <select id="BtnVideoObjectFit" class="form-select text-light bg-dark">
                             <option value="fill">fill</option>
                             <option value="contain">contain</option>
@@ -804,26 +929,26 @@ access to use this app.
                             <option value="scale-down">scale-down</option>
                             <option value="none">none</option>
                         </select>
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fa-solid fa-circle-play"></i>
                             <p>Video Controls:</p>
                         </div>
-                        <br>
+                        <br />
                         <select id="BtnVideoControls" class="form-select text-light bg-dark">
                             <option value="off">off</option>
                             <option value="on">on</option>
                         </select>
-                        <br>
+                        <br />
                     </div>
 
                     <div id="tabStyling" class="tabcontent">
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fa-solid fa-palette"></i>
                             <p>Theme:</p>
                         </div>
-                        <br>
+                        <br />
                         <select id="selectTheme" class="form-select text-light bg-dark">
                             <option value="dark">⚫ &nbsp;Dark</option>
                             <option value="grey">⚪ &nbsp;Grey</option>
@@ -831,58 +956,58 @@ access to use this app.
                             <option value="blue">🔵 &nbsp;Blue</option>
                             <option value="red">🔴 &nbsp;Red</option>
                         </select>
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fas fa-fill-drip"></i>
                             <p>Custom theme:</p>
                         </div>
-                        <br>
-                        <input id="themeColorPicker" class="theme-color-picker" type="text">
-                        <br>
+                        <br />
+                        <input id="themeColorPicker" class="theme-color-picker" type="text" />
+                        <br />
                         <div class="inline-check-box">
                             <div class="custom-width">
                                 <i class="fas fa-save"></i>
                                 <p>Keep custom</p>
                             </div>
                             <div class="form-check form-switch form-switch-md title">
-                                <input id="keepCustomTheme" class="form-check-input" type="checkbox">
+                                <input id="keepCustomTheme" class="form-check-input" type="checkbox" />
                             </div>
                         </div>
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fa-solid fa-up-down-left-right"></i>
                             <p>Buttons bar:</p>
                         </div>
-                        <br>
+                        <br />
                         <select id="BtnsBarPosition" class="form-select text-light bg-dark">
                             <option value="vertical">Vertical</option>
                             <option value="horizontal">Horizontal</option>
                         </select>
-                        <br>
+                        <br />
                         <div id="pinUnpinGridDiv" class="hidden">
                             <div class="title">
                                 <i class="fa-solid fa-map-pin"></i>
                                 <p>Pin video position:</p>
                             </div>
-                            <br>
+                            <br />
                             <select id="pinVideoPosition" class="form-select text-light bg-dark">
                                 <option value="vertical">Vertical</option>
                                 <option value="horizontal">Horizontal</option>
                                 <option value="top">Top</option>
                             </select>
                         </div>
-                        <br>
+                        <br />
                     </div>
 
                     <div id="tabLanguages" class="tabcontent">
-                        <br>
+                        <br />
                         <div class="title">
                             <i class="fa-solid fa-language"></i>
                             <p>Language:</p>
                         </div>
-                        <br>
+                        <br />
                         <div id="google_translate_element"></div>
-                        <br>
+                        <br />
                     </div>
                 </div>
             </main>
@@ -896,7 +1021,7 @@ access to use this app.
         <div id="remoteAudios"></div>
 
         <div id="sendFileDiv" class="fadein center">
-            <img id="imgShareSend" src="../images/share.png" alt="mirotalksfu-share-send" class="center-img"><br>
+            <img id="imgShareSend" src="../images/share.png" alt="mirotalksfu-share-send" class="center-img" /><br />
             <div id="sendFileInfo"></div>
             <div id="sendFilePercentage"></div>
             <progress id="sendProgress" max="0" value="0"></progress>
@@ -904,7 +1029,12 @@ access to use this app.
         </div>
 
         <div id="receiveFileDiv" class="fadein center">
-            <img id="imgShareReceive" src="../images/share.png" alt="mirotalksfu-share-receive" class="center-img"><br>
+            <img
+                id="imgShareReceive"
+                src="../images/share.png"
+                alt="mirotalksfu-share-receive"
+                class="center-img"
+            /><br />
             <div id="receiveFileInfo"></div>
             <div id="receiveFilePercentage"></div>
             <progress id="receiveProgress" max="0" value="0"></progress>
@@ -916,19 +1046,25 @@ access to use this app.
                 <div id="whiteboardTitle" class="whiteboard-header-title">
                     <button id="whiteboardCloseBtn" class="fas fa-times"></button>
                     <div class="form-check form-switch form-switch-md" style="margin-left: 10px">
-                        <input id="whiteboardLockButton" class="form-check-input" type="checkbox">
+                        <input id="whiteboardLockButton" class="form-check-input" type="checkbox" />
                     </div>
                 </div>
                 <div id="whiteboardOptions" class="whiteboard-header-options">
                     <button id="whiteboardGhostButton" class="fas fa-circle-half-stroke"></button>
-                    <input id="wbBackgroundColorEl" class="whiteboardColorPicker" type="color" value="#000000">
-                    <input id="wbDrawingColorEl" class="whiteboardColorPicker" type="color" value="#FFFFFF">
+                    <input id="wbBackgroundColorEl" class="whiteboardColorPicker" type="color" value="#000000" />
+                    <input id="wbDrawingColorEl" class="whiteboardColorPicker" type="color" value="#FFFFFF" />
                     <button id="whiteboardPencilBtn" class="fas fa-pencil-alt"></button>
                     <button id="whiteboardObjectBtn" class="fas fa-mouse-pointer"></button>
                     <button id="whiteboardUndoBtn" class="fas fa-undo"></button>
                     <button id="whiteboardRedoBtn" class="fas fa-redo"></button>
                     <div class="dropdown">
-                        <button class="dropdown-toggle" type="button" id="whiteboardDropDownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            id="whiteboardDropDownMenu"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
                             <i class="fas fa-ellipsis-vertical"></i>
                         </button>
                         <div class="dropdown-menu text-start" aria-labelledby="whiteboardDropDownMenu">
@@ -939,8 +1075,14 @@ access to use this app.
                             <button id="whiteboardLineBtn" class="fas fa-slash"></button>
                             <button id="whiteboardRectBtn" class="far fa-square"></button>
                             <button id="whiteboardTriangleBtn" class="fas">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="#FFFFFF">
-                                    <path d="M12 5.887l8.468 14.113h-16.936l8.468-14.113zm0-3.887l-12 20h24l-12-20z"></path>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="1em"
+                                    height="1em"
+                                    viewBox="0 0 24 24"
+                                    fill="#FFFFFF"
+                                >
+                                    <path d="M12 5.887l8.468 14.113h-16.936l8.468-14.113zm0-3.887l-12 20h24l-12-20z" />
                                 </svg>
                             </button>
                             <button id="whiteboardCircleBtn" class="far fa-circle"></button>
@@ -978,12 +1120,18 @@ access to use this app.
                             <i class="fas fa-save"></i>
                         </button>
                     </div>
-                    <br>
+                    <br />
 
                     <!-- CHAT SEARCH -->
                     <div class="input-group mt5">
                         <span class="input-group-text"><i class="fa fa-search"></i></span>
-                        <input id="searchParticipantsFromList" type="text" class="form-control" placeholder="Search..." maxlength="36">
+                        <input
+                            id="searchParticipantsFromList"
+                            type="text"
+                            class="form-control"
+                            placeholder="Search..."
+                            maxlength="36"
+                        />
                     </div>
 
                     <!-- CHAT LIST -->
@@ -997,9 +1145,14 @@ access to use this app.
                         <div class="w-100">
                             <!-- CHAT ABOUT -->
                             <div id="chatAbout" class="text-start">
-                                <img class="all-participants-img" id="chatShowParticipantsList" src="../images/participants.png" alt="participants">
+                                <img
+                                    class="all-participants-img"
+                                    id="chatShowParticipantsList"
+                                    src="../images/participants.png"
+                                    alt="participants"
+                                />
                                 <a data-toggle="modal" data-target="#view_info">
-                                    <img src="../images/all.png" alt="avatar">
+                                    <img src="../images/all.png" alt="avatar" />
                                 </a>
                                 <div class="chat-about">
                                     <h6 class="mb-0">Public chat</h6>
@@ -1019,28 +1172,43 @@ access to use this app.
                                 </button>
                                 <!-- CHAT MORE OPTIONS -->
                                 <div class="dropdown">
-                                    <button class="dropdown-toggle" type="button" id="chatDropDownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button
+                                        class="dropdown-toggle"
+                                        type="button"
+                                        id="chatDropDownMenu"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
                                         <i class="fas fa-bars"></i>
                                     </button>
                                     <ul class="dropdown-menu text-start" aria-labelledby="chatDropDownMenu">
                                         <li>
-                                            <hr class="hr">
+                                            <hr class="hr" />
                                             <div class="title ml10">
                                                 <i class="fa-solid fa-eye"></i>
                                                 <div class="form-check form-switch form-switch-md ml10">
-                                                    <input class="form-check-input" type="checkbox" id="showChatOnMsg" checked="">
+                                                    <input
+                                                        class="form-check-input"
+                                                        type="checkbox"
+                                                        id="showChatOnMsg"
+                                                        checked
+                                                    />
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
-                                            <hr class="hr">
+                                            <hr class="hr" />
                                             <div id="speechMsgDiv" class="title ml10">
                                                 <i class="fas fa-volume-high"></i>
                                                 <div class="form-check form-switch form-switch-md ml10">
-                                                    <input class="form-check-input" type="checkbox" id="speechIncomingMsg">
+                                                    <input
+                                                        class="form-check-input"
+                                                        type="checkbox"
+                                                        id="speechIncomingMsg"
+                                                    />
                                                 </div>
                                             </div>
-                                            <hr class="hr">
+                                            <hr class="hr" />
                                         </li>
                                         <li>
                                             <button id="chatGhostButton" class="btn-sm">
@@ -1083,7 +1251,12 @@ access to use this app.
                         <div class="input-group mb-0 w-100">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-message"></i></span>
-                                <textarea id="chatMessage" class="form-control" placeholder="Enter text here..." rows="1"></textarea>
+                                <textarea
+                                    id="chatMessage"
+                                    class="form-control"
+                                    placeholder="Enter text here..."
+                                    rows="1"
+                                ></textarea>
                                 <!-- <input 
                                     id="chatMessage" 
                                     type="text" 
@@ -1130,7 +1303,7 @@ access to use this app.
                         <div style="margin-left: 5px" class="title">
                             <i class="fa-solid fa-infinity"></i>
                             <div style="margin-left: 5px" class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="transcriptPersistentMode">
+                                <input class="form-check-input" type="checkbox" id="transcriptPersistentMode" />
                             </div>
                         </div>
                     </div>
@@ -1139,19 +1312,30 @@ access to use this app.
                         <button id="transcriptionMaxBtn" class=""><i class="fas fa-expand"></i></button>
                         <button id="transcriptionMinBtn" class="hidden"><i class="fas fa-compress"></i></button>
                         <div class="dropdown title">
-                            <button class="dropdown-toggle" type="button" id="transcriptionDropDownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button
+                                class="dropdown-toggle"
+                                type="button"
+                                id="transcriptionDropDownMenu"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
                                 <i class="fas fa-bars"></i>
                             </button>
                             <ul class="dropdown-menu text-start" aria-labelledby="transcriptionDropDownMenu">
                                 <li>
-                                    <hr class="hr">
+                                    <hr class="hr" />
                                     <div class="title ml5">
                                         <i class="fa-solid fa-eye"></i>
                                         <div style="margin-left: 5px" class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="transcriptShowOnMsg" checked="">
+                                            <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                id="transcriptShowOnMsg"
+                                                checked
+                                            />
                                         </div>
                                     </div>
-                                    <hr class="hr">
+                                    <hr class="hr" />
                                 </li>
                                 <li>
                                     <button id="transcriptionGhostBtn">
@@ -1188,7 +1372,7 @@ access to use this app.
             <main>
                 <div id="lobbyUsers">
                     <table id="lobbyTb">
-                        <tbody><tr>
+                        <tr>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -1208,7 +1392,7 @@ access to use this app.
                                 </button>
                             </td>
                         </tr>
-                    </tbody></table>
+                    </table>
                 </div>
             </main>
         </section>
@@ -1222,6 +1406,5 @@ access to use this app.
             }
         </script>
         <!-- <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
-    
-
-</body></html>
+    </body>
+</html>
